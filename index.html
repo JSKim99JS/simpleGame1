@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코딩 어드벤처: 신비한 섬 탈출</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        #game-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+<div id="game-container">
+    <h1>코딩 어드벤처: 신비한 섬 탈출</h1>
+    <p id="story">다리를 건너려면 두 숫자의 합을 계산해야 합니다!</p>
+
+    <input type="number" id="x" placeholder="첫 번째 숫자">
+    <input type="number" id="y" placeholder="두 번째 숫자">
+    <button onclick="solveLevel1()">합 계산하기</button>
+
+    <div id="output"></div>
+</div>
+
+<script>
+    function solveLevel1() {
+        let x = parseInt(document.getElementById('x').value);
+        let y = parseInt(document.getElementById('y').value);
+        let sum = x + y;
+        
+        if (!isNaN(sum)) {
+            document.getElementById('output').textContent = "정답입니다! " + sum + "로 다리를 건넙니다.";
+            document.getElementById('story').textContent = "다음 도전! 문을 열려면 올바른 비밀번호를 입력하세요.";
+        } else {
+            document.getElementById('output').textContent = "숫자를 입력해주세요.";
+        }
+    }
+</script>
+
+</body>
+</html>
